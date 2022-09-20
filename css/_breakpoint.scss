@@ -1,0 +1,13 @@
+@use './hero' as h;
+@use './nav' as n;
+
+//breakpoint for tablets and above
+@media screen and (min-width: 48em) {
+    @include h.hero--md();
+    @include n.nav--md();
+}
+
+//breakpoint for laptop and above
+@media screen and (min-width: 64em) {
+    @include h.hero--lg();
+}

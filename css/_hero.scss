@@ -1,0 +1,110 @@
+@use './utili' as u;
+
+.hero {
+    .container {
+        @include u.container--vibe(0rem);
+        @include u.flex(column-reverse);
+        gap: 3.125rem;
+    }
+
+    &_col1{
+        padding-inline: 1.25rem;
+        text-align: center;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: u.$fontWght2;
+            margin-block-end: 20px;
+        }
+
+        a {
+            padding: 0.94rem 1.56rem;
+            background-color: u.$AlmostBlack;
+            color: u.$AlmostWhite;
+            border-radius: 10px;
+            margin-block-start: 20px;
+            border: 2px solid u.$AlmostBlack;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid u.$AlmostBlack;
+                color: u.$AlmostBlack;
+            }
+        }
+        p {
+            color: u.$MediumGray;
+        }
+    }
+
+    .clients_logos {
+        @include u.flex(row);
+        padding-block: 50px;
+        
+        img {
+            width: 60px;
+        }
+    }
+
+    &_col2 {
+        img {
+            inline-size: 100%;
+        }
+    }
+}
+
+// Media Query - Called in breakpoint.scss
+
+@mixin hero--md() {
+    .hero {
+        .container {
+            @include u.container--vibe(1.25rem 1.88rem 3.13rem);
+            @include u.flex(row);
+            gap: 3.125rem;
+        }
+    
+        &_col1{
+            flex-basis: 50%;
+            text-align: left;
+    
+            h1 {
+                font-size: 3rem;
+                margin-block-end: 30px;
+            }
+    
+            a {
+                margin-block-start: 40px;
+            }
+
+            p {
+                color: u.$MediumGray;
+            }
+        }
+    
+        .clients_logos {
+            padding-block: 50px 0;
+        }
+    
+        &_col2 {
+            flex-basis: 50%;
+        }
+    }
+}
+
+@mixin hero--lg() {
+    .hero {
+        &_col1 {
+            h1 {
+                font-size: 3.5rem;
+                margin-block-end: 50px;
+            }
+        }
+
+        .clients_logos {
+            padding-block: 100px 0;
+            
+            img {
+                width: 70px;
+            }
+        }
+    }
+}

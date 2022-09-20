@@ -1,0 +1,51 @@
+@use "./utili" as u;
+
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: u.$font-family;
+  font-size: 1rem;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: u.$fontWght1;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.2;
+  font-weight: u.$fontWght1;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+}
+
+.attribution {
+    padding-block: 50px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 12px;
+}

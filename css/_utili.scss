@@ -1,0 +1,24 @@
+//Color Stack
+$AlmostWhite: hsl(0, 0%, 98%);
+$MediumGray: hsl(0, 0%, 41%);
+$AlmostBlack: hsl(0, 0%, 8%);
+
+// Font Stack
+$font-family: 'Epilogue', sans-serif;
+$fontWght1: 500;
+$fontWght2: 700;
+
+//Reuseables and mixins
+
+@mixin flex($drl) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: $drl;
+}
+
+@mixin container--vibe($val) {
+    max-inline-size: 76rem;
+    margin-inline: auto;
+    padding: $val;
+}

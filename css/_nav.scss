@@ -1,0 +1,169 @@
+@use './utili' as u;
+
+.nav {
+    @include u.flex(row);
+    @include u.container--vibe(1.25rem);
+    max-inline-size: 75rem;
+
+
+    #closeMenu {
+        display: none;
+        position: relative;
+        z-index: 10;
+    }
+
+    #openMenu {
+        z-index: 10;
+    }
+
+    .links {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 150%;
+        bottom: 0;
+        z-index: 10;
+
+        color: u.$AlmostBlack;
+        background-color: u.$AlmostWhite;
+        padding-inline: 20px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s;
+
+        a{
+            color: u.$AlmostBlack;
+        }
+    }
+
+    .submenu {
+        display: none;
+        position: relative;
+        padding: 15px;
+        
+
+        li {
+            padding-block-start: 15px;
+        }
+
+        img {
+            padding-inline-end: 10px;
+        }
+    }
+
+    .openSubMenu {
+        position: relative;
+        padding-block-start: 20px;
+
+        &::after {
+        content: '';
+        position: absolute;
+        block-size: 10px;
+        inline-size: 10px;
+        margin-block-start: 5px;
+        margin-inline-start: 10px;
+        background: url('../images/icon-arrow-down.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            transform: rotate(20deg);
+        }
+    }
+    }
+    
+
+    .olinks {
+        a {
+            margin-block-start: 20px;
+        }
+    }
+
+    .links_primary {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-block-start: 30px;
+        text-align: center;
+  
+
+        .cta {
+            border: 2px solid u.$AlmostBlack;
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;            
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: none;
+}
+
+//Called in breakpoint.scss - media query
+@mixin nav--md() {
+    .nav {
+        gap: 20px;
+
+        #closeMenu, #openMenu {
+            display: none;
+        }
+    
+        .links {
+            position: unset;
+            background-color: transparent;
+            padding-inline: 0;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 20px;
+            inline-size: 100%;
+            
+            &_sec {
+                display: flex;
+                gap: 50px;
+                align-items: center;
+            }
+        }
+    
+        .submenu {
+            display: none;
+            position: absolute;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: white;
+            top: 70px;
+        }
+    
+        .openSubMenu {
+            position: relative;
+            padding-block-start: 0;
+        }
+        
+    
+        .olinks {
+            display: flex;
+            gap: 20px;
+
+            a{
+                margin-block-start: 0;
+            }
+        }
+    
+        .links_primary {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            margin-block-start: 0px;
+            text-align: center;
+        }
+    }
+}
