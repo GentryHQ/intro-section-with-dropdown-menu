@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://your-solution-url.com)
+- Solution URL: [GitHub Repo](https://github.com/GentryHQ/intro-section-with-dropdown-menu)
 - Live Site URL: [GitHub Pages](https://your-live-site-url.com)
 
 ## My process
